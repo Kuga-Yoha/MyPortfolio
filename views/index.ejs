@@ -1,0 +1,70 @@
+
+  
+<% include partials/header.ejs%>
+<% include partials/main_nav.ejs %>
+
+<!--
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+
+-->
+
+
+
+<div>
+<div class=""  >
+<!--Welcome Message-->
+  <div class="card-body text-dark fw-bold" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <div class=" my-xxl-5 mx-xxl-5  ">
+      <img src="/Assets/images/coding-man-color.png" class="" style="height:5rem;width: 5rem;" alt="...">
+      <div class="my-xxl-5 mx-xxl-5  intro-card" style="margin: 10rem;">
+        <h3 class="card-title fs-1">Hi, I'm Kugavathanan. Nice to meet you.</h3>
+        <br />
+        <br />
+        <p class="card-text fst-italic fs-4"  >I'm a graduate Student who is passionate on learning and developing web and mobile applications.I have worked as an Intern as well as Associate Software Engineer in development of enterprise level appplications. I have worked in few freelance projects of my friends.</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
+    </div>
+
+    <!--Mission statement   Personal Mission-->
+    <div class="text-dark my-xxl-5 mx-xxl-5">
+      
+      <div class="my-xxl-5 mx-xxl-5 ">
+        <h3 class="class-header" >Mission Statement </h3>
+        <blockquote class="blockquote mb-0">
+          <p><i>"I want to learn in a working environment to apply my knowledge in Software Engineering sector to improve my coding as well as practical implications."</i></p>
+         
+        </blockquote>
+      </div>
+    </div>
+
+    <!---->
+    <div class="my-xxl-5 mx-xxl-5">
+      
+      <div class="d-grid gap-2 col-3 row-6 mx-auto">
+        <button class="btn btn-warning fw-bold" onclick="submitClicked()"  type="button">Be in Touch with me >>></button>
+        
+      </div>
+      <p style="display: flex;flex-direction:row-reverse;"><img src="/Assets/images/coding.png" style="height:15rem;width: 15rem;" />
+      <img src="/Assets/images/coding-monitor.png" style="height:15rem;width: 15rem;" />
+    </p>
+      
+    </div>
+   
+  </div>
+</div>
+
+</div>
+
+<script>
+  function submitClicked(){
+      window.location = "/contact-me"
+  }
+
+</script>
+<% include partials/bottom_nav.ejs%>
+<% include partials/footer.ejs%>
+<!-- <a href="https://www.flaticon.com/free-icons/web-development" title="web development icons">Web development icons created by surang - Flaticon</a> -->
+
+
+
