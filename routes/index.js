@@ -32,5 +32,10 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: "Kugavathanan | Contact Me" });
 });
 
+//Get Error"Message
+router.get("*", function (req, res, next) {
+  res.render("error", { title: "Error", message: "404" });
+});
+
 
 module.exports = router;
