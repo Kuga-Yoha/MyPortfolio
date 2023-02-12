@@ -1,85 +1,84 @@
-<% include partials/header.ejs%>
-<% include partials/main_nav.ejs %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head.ejs %>
+  <link rel='stylesheet' href='/content/stylesheets/contact.css' />
+</head>
+
+<body>
+  <header>
+    <% include partials/nav.ejs %>
+  </header>
+
+  <main class="container cont-height">
+    <h1 class="content-heading mb-5">Contact</h1>
 
 
+    <h1 class="title text-center mb-3">Get In Touch</h1>
+    <p class="text-center">I like to meet new people. Let's grab a coffee!</p>
 
-<div id="contact-me-heading">
-    <h3 class="page-title">Contact Me</h3>
- </div>   
-<div class="card w-50 contact-card">
-    
-    <div class="card-body">
-      <h5 class="card-title"></h5>
-      <p class="card-text fw-bolder fs-4">
-        Kugavathanan Yohanathan
-        <table class="">
-            <tr class="row">
-                <td class="fw-bolder">Email</td>
-                <td>kugavathanan@outlook.com</td>
-            </tr>
-            <tr class="row">
-                <td class="fw-bolder">Contact Number</td>
-                <td>+1 (437) 557 8226</td>
-            </tr>
-            <tr class="row">
-                <td class="fw-bolder">Linked-In</td>
-                <td><a href="https://lk.linkedin.com/in/kuga-yoha">https://lk.linkedin.com/in/kuga-yoha</a></td>
-            </tr>
-            
-        </table>
-
-          
-      </p>
-      
+    <div class="d-flex flex-column w-100 align-items-center my-4">
+      <div class="flex-row">
+        <a class="navbar-brand mx-3" href="" target="_blank">
+          <i class="fa-solid fa-envelope fa-2xl text-black logo"></i>
+        </a>
+        <a class="navbar-brand mx-3" href="tel:+4733378901" target="_blank">
+          <i class="fa-solid fa-phone fa-2xl text-black logo"></i>
+        </a>
+        <a class="navbar-brand mx-3" href="https://github.com/Kuga-Yoha/" target="_blank">
+          <i class="fa-brands fa-github fa-2xl text-black logo"></i>
+        </a>
+        <a class="navbar-brand mx-3" href="https://lk.linkedin.com/in/kuga-yoha" target="_blank">
+          <i class="fa-brands fa-linkedin fa-2xl text-black logo"></i>
+        </a>
+      </div>
     </div>
-  </div>
 
-
-  <div class="card w-50 contact-card">
-    
-    <div class="card-body">
-        <div class="mb-3">
+    <div class="d-flex justify-content-center mt-5">
+      <div class="card contact-card">
+        <div class="card-body">
+          <div class="mb-4">
             <label for="firstName" class="form-label">First Name</label>
             <input type="text" class="form-control" id="firstName" placeholder="First Name">
           </div>
-          <div class="mb-3">
+          <div class="mb-4">
             <label for="lastName" class="form-label">Last Name</label>
             <input type="text" class="form-control" id="lastName" placeholder="Last Name">
           </div>
-          <div class="mb-3">
+          <div class="mb-4">
             <label for="contactNumber" class="form-label">Contact Number</label>
             <input type="tel" class="form-control" id="contactNumber" placeholder="(000)-000-0000">
           </div>
-        <div class="mb-3">
+          <div class="mb-4">
             <label for="email" class="form-label">Email address</label>
             <input type="email" class="form-control" id="email" placeholder="name@example.com">
           </div>
-          <div class="mb-3">
+          <div class="mb-4">
             <label for="message" class="form-label">Message</label>
             <textarea class="form-control" id="message" rows="3"></textarea>
           </div>
 
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-warning fw-bold" onclick="submitClicked()"  type="button">Submit</button>
-            <!-- <a href="/home" class="btn btn-warning fw-bold" role="button" aria-disabled="true">Submit</a>
-    -->
+          <div class="text-center mx-auto">
+            <button class="btn fw-bold rounded-5" onclick="" type="button">Submit</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-     </div>
-     </div>   
-<br/><br/>
+
+  </main>
+
+  <footer>
+    <% include partials/footer.ejs %>
+  </footer>
+</body>
+
 <script>
-    function submitClicked(){
-        window.location = "/home"
-    }
-
+  function submitClicked() {
+    window.location = "/home"
+  }
 </script>
-  
 
-
-
-
-
-<% include partials/bottom_nav.ejs%>
-<% include partials/footer.ejs%>
-<!-- <a href="https://www.flaticon.com/free-icons/web-development" title="web development icons">Web development icons created by surang - Flaticon</a> -->
+</html>
