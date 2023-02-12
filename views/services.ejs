@@ -1,31 +1,57 @@
-<% include partials/header.ejs%>
-<% include partials/main_nav.ejs %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head.ejs %>
+</head>
+
+<body>
+  <header>
+    <% include partials/nav.ejs %>
+  </header>
 
 
-<h1 class="page-title text-white">Services</h1>
+  <main class="container  cont-height">
+    <h1 class="content-heading mb-5">Services</h1>
 
-<div class="card w-50 projects-card">
-    <img src="/Assets/images/coding-monitor.png" alt="apartment" class="flat-logo"/>
-    <div class="card-body">
-      <h5 class="card-title">Design + Development</h5>
-      <p class="card-text">
-        Clean and modern designs with better optimization for performance and search engines  
-        <p class="fw-light"> </p>      
-      </p>
-      
+    <div class="d-flex flex-column gap-5">
+
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/assets/images/apartments.jpg" class="img-fluid rounded-start" alt="cover-img">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body h-100 d-flex flex-column justify-content-evenly">
+              <h5 class="card-title fs-4">Develop a CRUD system</h5>
+              <p class="card-text"> I can develop a CRUD backend RESTful API for any business scenarios and functionalities. I will apply clean coding practices throught the repository.</p>
+              <p class="card-text"><small class="text-muted">Technologies: </b> Java, Spring Boot, Hibernate, MySQL</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body h-100 d-flex flex-column justify-content-evenly">
+              <h5 class="card-title fs-4">Develop a CRUD system</h5>
+              <p class="card-text"> I can develop a CRUD backend RESTful API for any business scenarios and functionalities. I will apply clean coding practices throught the repository.</p>
+              <p class="card-text"><small class="text-muted">Technologies: </b> Java, Spring Boot, Hibernate, MySQL</small></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="/assets/images/students.jpg" class="img-fluid rounded-end" alt="cover-img">
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <div class="card w-50 projects-card ">
-    <img src="/Assets/images/mobile.png" alt="portfolio" class="flat-logo"/>
-    <div class="card-body">
-      <h5 class="card-title">Mobile Friendly</h5>
-      <p class="card-text">A responsive design makes your website accessible to all users, regardless of their device.
-      </p>
-      
-    </div>
-  </div>
+  </main>
 
+  <footer>
+    <% include partials/footer.ejs %>
+  </footer>
+</body>
 
-<% include partials/bottom_nav.ejs%>
-<% include partials/footer.ejs%>
-<!-- <a href="https://www.flaticon.com/free-icons/web-development" title="web development icons">Web development icons created by surang - Flaticon</a> -->
+</html>
