@@ -8,8 +8,6 @@ router.get("/", function (req, res, next) {
   res.render("home", { title: "Kugavathanan" });
 });
 
-
-
 //GET about-me page 
 router.get('/about-me', function(req, res, next) {
   res.locals = { req: req };
