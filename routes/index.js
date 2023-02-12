@@ -27,7 +27,7 @@ router.get('/services', function(req, res, next) {
 });
 
 //GET contact-me page
-router.get('/contact-me', function(req, res, next) {
+router.get('/contact', function(req, res, next) {
   res.locals = { req: req };
   res.render('contact', { title: "Kugavathanan | Contact Me" });
 });
