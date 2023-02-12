@@ -1,0 +1,51 @@
+@keyframes welcomeText {
+  0% {
+    content: "Welcome";
+  }
+  50% {
+    content: "Bonjour";
+  }
+}
+.welcome-text {
+  font-family: var(--font-mono);
+  font-size: var(--font-md);
+  line-height: var(--line-height-md);
+}
+.welcome-text::before {
+  content: "Welcome";
+  animation: welcomeText 4s linear 1s infinite;
+}
+
+h1,
+h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 550;
+  line-height: 0.8;
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+h3 {
+  font-family: var(--font-mono);
+  font-size: var(--font-lg);
+  line-height: var(--line-height-md);
+}
+
+p {
+  max-width: 700px;
+}
+
+button {
+  width: 160px;
+  border: 2px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  font-family: var(--font-mono) !important;
+}
+
+button:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--bg-color) !important;
+}
