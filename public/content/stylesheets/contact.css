@@ -1,0 +1,32 @@
+button {
+  width: 150px;
+  border: 2px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  font-family: var(--font-mono) !important;
+}
+
+button:hover {
+  background-color: var(--primary-color) !important;
+  color: var(--bg-color) !important;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: clamp(44px, 5vw, 2.2rem);
+  font-weight: 600;
+  line-height: var(--line-height-2xl);
+}
+
+.logo:hover {
+  color: var(--primary-color) !important;
+}
+
+.card {
+  width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 75%;
+  }
+}
