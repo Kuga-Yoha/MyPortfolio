@@ -1,32 +1,61 @@
-<% include partials/header.ejs%>
-<% include partials/main_nav.ejs %>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1 class="page-title text-white projects-card-title">Projects</h1>
+<head>
+  <% include partials/head.ejs %>
+</head>
 
-<div class="card w-50 projects-card">
-    <img src="/Assets/images/apartments.png" alt="apartment" class="flat-logo"/>
-    <div class="card-body">
-      <h5 class="card-title">Apartment Management System</h5>
-      <p class="card-text">Developed a web based application for an apartment as a part of undergraduate study. It consists of subsytems
-        such as employee , owners , tenants , visitors and assets management systems.
-        I was involved in developing the employee management system in it. 
-        <p class="fw-light"> <b>Technologies: </b> JSP, HTML, CSS, JavaScript</p>      
-      </p>
-      
+<body>
+  <header>
+    <% include partials/nav.ejs %>
+  </header>
+
+  <main class="container  cont-height">
+    <h1 class="content-heading mb-5">Projects</h1>
+
+    <div class="d-flex flex-column gap-5">
+
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/assets/images/apartments.jpg" class="img-fluid rounded-start" alt="cover-img">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body h-100 d-flex flex-column justify-content-evenly">
+              <h5 class="card-title fs-4">Apartment Management System</h5>
+              <p class="card-text">Developed a web based application for an apartment as a part of undergraduate study.
+                It consists of subsytems such as employee, owners, tenants, visitors and assets management systems.
+                I was involved in developing the employee management system in it.</p>
+              <p class="card-text"><small class="text-muted">Technologies: </b> JSP, HTML, CSS, JavaScript</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div class="card-body h-100 d-flex flex-column justify-content-evenly">
+              <h5 class="card-title fs-4">Apartment Management System</h5>
+              <p class="card-text">Developed a web based application for an apartment as a part of undergraduate study.
+                It consists of subsytems such as employee, owners, tenants, visitors and assets management systems.
+                I was involved in developing the employee management system in it.</p>
+              <p class="card-text"><small class="text-muted">Technologies: </b> JSP, HTML, CSS, JavaScript</small></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="/assets/images/students.jpg" class="img-fluid rounded-end" alt="cover-img">
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <div class="card w-50 projects-card">
-    <img src="/Assets/images/portfolio.png" alt="portfolio" class="flat-logo"/>
-    <div class="card-body">
-      <h5 class="card-title">My Portfolio Site</h5>
-      <p class="card-text">A basic Portfolio site to potray my  professional related skills as well as projects.
-        <p class="fw-light"><b>Technologies:</b> Node JS, EJS(Embedded Java Script) ,HTML, CSS</p>      
-      </p>
-      
-    </div>
-  </div>
 
+  </main>
 
-<% include partials/bottom_nav.ejs%>
-<% include partials/footer.ejs%>
-<!-- <a href="https://www.flaticon.com/free-icons/web-development" title="web development icons">Web development icons created by surang - Flaticon</a> -->
+  <footer>
+    <% include partials/footer.ejs %>
+  </footer>
+</body>
+
+</html>

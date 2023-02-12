@@ -1,0 +1,53 @@
+.left {
+  width: 70%;
+  height: 300px;
+}
+
+.right {
+  width: 30%;
+}
+
+.right .wrapper {
+  display: flex;
+  border-radius: 8px;
+  box-shadow: var(--bg-color) 20px 20px 0px -3px,
+    var(--secondary-color) 20px 20px;
+  transition: box-shadow 0.5s;
+}
+
+.right .wrapper:hover {
+  box-shadow: var(--bg-color) 14px 14px 0px -3px, var(--primary-color) 14px 14px;
+}
+
+.right img {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  filter: grayscale(100%) opacity(0.5) blur(0.5px);
+  transition: filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.right img:hover {
+  filter: blur(0.2px);
+}
+
+.left p {
+  width: 90%;
+  line-height: var(--line-height-lg);
+}
+
+.resume-btn {
+  width: 150px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  font-family: var(--font-mono);
+}
+
+.resume-btn:hover {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}

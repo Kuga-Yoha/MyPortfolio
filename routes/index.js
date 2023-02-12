@@ -1,28 +1,35 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: '' });
+// GET home page. 
+// GET index page 
+router.get("/", function (req, res, next) {
+  res.locals = { req: req };
+  res.render("home", { title: "Kugavathanan" });
 });
 
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: '' });
-});
-
-/*GET About*/
+//GET about-me page 
 router.get('/about-me', function(req, res, next) {
-  res.render('about_me', { title: 'About Me' });
+  res.locals = { req: req };
+  res.render('about_me', { title: "Kugavathanan | About Me" });
 });
 
+//GET projects page
 router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects' });
+  res.locals = { req: req };
+  res.render('projects', { title: "Kugavathanan | Projects" });
 });
+
+//GET services page 
 router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services' });
+  res.locals = { req: req };
+  res.render('services', { title: "Kugavathanan | Services" });
 });
+
+//GET contact-me page
 router.get('/contact-me', function(req, res, next) {
-  res.render('contact_me', { title: 'Contact Me' });
+  res.locals = { req: req };
+  res.render('contact_me', { title: "Kugavathanan | Contact Me" });
 });
 
 

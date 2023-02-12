@@ -1,33 +1,41 @@
-<% include partials/header.ejs%>
-<% include partials/main_nav.ejs %>
+<!DOCTYPE html>
+<html lang="en">
 
-<!--<h1><%= title %></h1>
-style="float: center;margin-top: 5rem;"
--->
+<head>
+  <% include partials/head.ejs %>
+  <link rel='stylesheet' href='/content/stylesheets/about-me.css' />
+</head>
 
-<div class="about-me-card " >
-    <div >
-        <img src="/Assets/images/kugavathanan.png" alt="Kugavathanan" class="about-me-pic card rounded-circle" style="margin-left: 5rem;" >
+<body>
+  <header>
+    <% include partials/nav.ejs %>
+  </header>
+
+  <main class="container cont-height">
+    <h1 class="content-heading mb-5">About Me</h1>
+
+    <div class="d-flex flex-row align-items-center p-4">
+      <div class="left flex-column justify-content-center align-items-center pt-5">
+        <p>
+          I have completed my Bachelor of Science (Hons) in Computer Science and Software Engineering at the University of Bedfordshire, United Kingdom.
+          I have worked as a Software Engineer Trainee & Associate Software Engineer for 1 year 9 months at CAMMS Group in Sri Lanka.
+          I'm currently pursuing the Post Graduate Diploma in Software Engineering Technology — Artificial Intelligence at Centennial College, Canada.
+          I have a passion for building things that people love to use in their daily life.
+        </p>
+        <a class="resume-btn btn rounded-5" href="assets/doc/Yohanathan_Kugavathanan.pdf" target="_blank">Get Resume</a>
+      </div>
+
+      <div class="right flex-column justify-content-center">
+        <div class="wrapper">
+          <img src="/assets/images/kugavathanan.png" alt="avatar">
+        </div>
+      </div>
     </div>
-    <div>
-        <div class="about-me-pic">
-            <h2 class="card-title text-white">About Me</h2>
-            
-            <p class="text-white">
-                I'm Kugavathanan Yohanathan.<br /> I have completed my Higher Diploma in SLIIT (Sri Lankan Institute of Information Technology, Sri Lanka) and my B.Sc. (Hons.) in Computer Science and Software Engineering at the University of Bedfordshire, United Kingdom.<br/> I have worked as an intern software engineer (1 year) and an associate software engineer (9 months) at CAMMS (CAM Management Solutions) in Sri Lanka.
-                I'm currently pursuing the Post Graduate Diploma in Software Engineering Technology—Artificial Intelligence at Centennial College, Canada. I am trying to learn new things and get updated on new technologies.                
-            </p>
-            <div class="card">
-            <a id="link-to-cv card-body" href="https://1drv.ms/b/s!AptCHc5YnF-pgRjGN1Kmb_A2_sOY?e=EK0s7I">Click to View Curriculam Vitae </a>
-           </div>
-            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-          </div>
-              </div>
-</div>
+  </main>
 
+  <footer>
+    <% include partials/footer.ejs %>
+  </footer>
+</body>
 
-
-
-<% include partials/bottom_nav.ejs%>
-<% include partials/footer.ejs%>
-<!-- <a href="https://www.flaticon.com/free-icons/web-development" title="web development icons">Web development icons created by surang - Flaticon</a> -->
+</html>
