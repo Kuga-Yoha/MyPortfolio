@@ -3,11 +3,27 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const livereload = require("livereload");
+const connectLivereload = require("connect-livereload");
+require("dotenv").config();
+
+//Enable live reload
+const liveReloadServer = livereload.createServer();
+liveReloadServer.watch(path.join(__dirname, "views"));
+
+liveReloadServer.server.once("connection", () => {
+  setTimeout(() => {
+    liveReloadServer.refresh("/");
+  }, 5);
+});
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+app.use(connectLivereload());
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
