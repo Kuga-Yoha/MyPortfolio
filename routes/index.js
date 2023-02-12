@@ -29,7 +29,7 @@ router.get('/services', function(req, res, next) {
 //GET contact-me page
 router.get('/contact-me', function(req, res, next) {
   res.locals = { req: req };
-  res.render('contact_me', { title: "Kugavathanan | Contact Me" });
+  res.render('contact', { title: "Kugavathanan | Contact Me" });
 });
 
 
