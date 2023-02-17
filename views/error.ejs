@@ -1,5 +1,17 @@
-
-
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/head.ejs %>
+</head>
+<body>
+  <main class="vh-100 d-flex flex-column justify-content-center align-items-center">
+    <h1 class="fw-bold"><%= message %></h1>
+    <button class="btn btn-secondary m-5" onclick="submitClicked()">Go Home</button>
+  </main>
+</body>
+<script>
+  function submitClicked() {
+    window.location = "/";
+  }
+</script>
+</html>

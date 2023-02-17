@@ -14,27 +14,32 @@
   <main class="container cont-height">
     <h1 class="content-heading mb-5">Contact</h1>
 
-
     <h1 class="title text-center mb-3">Get In Touch</h1>
     <p class="text-center">I like to meet new people. Let's grab a coffee!</p>
 
+    <!--Contact Card-->
     <div class="d-flex flex-column w-100 align-items-center my-4">
       <div class="flex-row">
-        <a class="navbar-brand mx-3" href="" target="_blank">
+        <!--Email-->
+        <a class="navbar-brand mx-3" href="mailto:kugavathanan@outlook.com" target="_blank">
           <i class="fa-solid fa-envelope fa-2xl text-black logo"></i>
         </a>
+        <!--Contact No-->
         <a class="navbar-brand mx-3" href="tel:+4733378901" target="_blank">
           <i class="fa-solid fa-phone fa-2xl text-black logo"></i>
         </a>
+        <!--GitHub-->
         <a class="navbar-brand mx-3" href="https://github.com/Kuga-Yoha/" target="_blank">
           <i class="fa-brands fa-github fa-2xl text-black logo"></i>
         </a>
+        <!--LinkedIn-->
         <a class="navbar-brand mx-3" href="https://lk.linkedin.com/in/kuga-yoha" target="_blank">
           <i class="fa-brands fa-linkedin fa-2xl text-black logo"></i>
         </a>
       </div>
     </div>
 
+    <!--Contact Form-->
     <div class="d-flex justify-content-center mt-5">
       <div class="card contact-card">
         <div class="card-body">
@@ -60,7 +65,7 @@
           </div>
 
           <div class="text-center mx-auto">
-            <button class="btn fw-bold rounded-5" onclick="" type="button">Submit</button>
+            <button class="btn fw-bold rounded-5" onclick="onSubmitClicked()" type="button">Submit</button>
           </div>
         </div>
       </div>
@@ -76,8 +81,8 @@
 </body>
 
 <script>
-  function submitClicked() {
-    window.location = "/home"
+  function onSubmitClicked() {
+    window.location = "/"
   }
 </script>
 

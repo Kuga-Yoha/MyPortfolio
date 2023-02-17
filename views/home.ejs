@@ -12,6 +12,7 @@
   </header>
 
   <main>
+    <!--Home Content-->
     <div class="content-wrapper container d-flex flex-column justify-content-center gap-4 cont-height">
       <h6 class="welcome-text">, I'm</h6>
       <h1 class="fw-bold lh-3">Kugavathanan</h1>
@@ -22,20 +23,19 @@
         Recently worked as an Associate Software Engineer developing enterprise solutions.
         Also a tea lover ☕
       </p>
-      <button class="contact-btn btn btn-outline-primary rounded-5" onclick="submitClicked()">
+      <button class="contact-btn btn btn-outline-primary rounded-5" onclick="onSubmitClicked()">
         Say Hello 👋
       </button>
     </div>
   </main>
-
   <footer>
     <% include partials/footer.ejs %>
   </footer>
 </body>
 
 <script>
-  function submitClicked() {
-    window.location = "/contact-me"
+  function onSubmitClicked() {
+    window.location = "/contact"
   }
 </script>
 

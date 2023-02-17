@@ -1,0 +1,130 @@
+/*
+main.css
+Kugavathanan Yohanathan
+301315801
+11-02-2023
+
+*/
+
+:root {
+  --primary-color: #6e07f3;
+  --secondary-color: #585757;
+  --tertiary-color: #5be9b9;
+  --bg-color: #ffff;
+  --text-color: #1111;
+  --border-color: #dbdbdb;
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --line-height-xs: 1rem;
+  --line-height-sm: 1.25rem;
+  --line-height-md: 1.5rem;
+  --line-height-lg: 1.75rem;
+  --line-height-xl: 1.75rem;
+  --line-height-2xl: 1.75rem;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+p {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.cont-height {
+  min-height: calc(100vh - 223px);
+}
+
+.logo {
+  color: var(--primary-color);
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: var(--font-md);
+  line-height: var(--line-height-md);
+  color: var(--text-color);
+}
+
+.navbar-toggler {
+  width: 60px;
+  height: 40px;
+}
+
+.active {
+  color: var(--primary-color) !important;
+}
+
+.content-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(26px, 5vw, 2.2rem);
+  font-weight: 600;
+  line-height: var(--line-height-2xl);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.content-heading::after {
+  content: "";
+  display: block;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  margin-left: 20px;
+  background-color: var(--primary-color);
+}
+
+.text-muted {
+  font-family: var(--font-mono);
+  font-size: var(--font-sm);
+  line-height: var(--line-height-md);
+  color: var(--primary-color) !important;
+}
+
+.card {
+  transition: transform 0.8s ease;
+}
+
+.card:hover {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.card .col-md-4 {
+  overflow: hidden;
+}
+
+.card img {
+  transition: transform 0.8s ease;
+}
+
+.card:hover img {
+  transform: scale(1.3);
+}
+
+.foot-text {
+  font-family: var(--font-mono);
+  font-size: var(--font-sm);
+}
