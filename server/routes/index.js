@@ -9,33 +9,34 @@ router.get("/", function (req, res, next) {
 });
 
 //GET about-me page 
-router.get('/about-me', function(req, res, next) {
+router.get('/about-me', function (req, res, next) {
   res.locals = { req: req };
   res.render('about_me', { title: "Kugavathanan | About Me" });
 });
 
 //GET projects page
-router.get('/projects', function(req, res, next) {
+router.get('/projects', function (req, res, next) {
   res.locals = { req: req };
   res.render('projects', { title: "Kugavathanan | Projects" });
 });
 
 //GET services page 
-router.get('/services', function(req, res, next) {
+router.get('/services', function (req, res, next) {
   res.locals = { req: req };
   res.render('services', { title: "Kugavathanan | Services" });
 });
 
 //GET contact-me page
-router.get('/contact', function(req, res, next) {
+router.get('/contact', function (req, res, next) {
   res.locals = { req: req };
-  res.render('contact', { title: "Kugavathanan | Contact Me" });
+  res.render('contact', { title: "Kugavathanan | Contact Me", action:"add" });
 });
 
 //Get Error"Message
-router.get("*", function (req, res, next) {
+/*router.get("*", function (req, res, next) {
   res.render("error", { title: "Error", message: "404" });
 });
+*/
 
 
 module.exports = router;
