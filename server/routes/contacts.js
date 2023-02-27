@@ -93,7 +93,7 @@ router.get("/contactList", (req,res,next)=>{
 
 
 router.get("/", (req,res,next)=>{    
-    res.render("home",{"title":"Contact"});
+    res.redirect("/contacts/contactList");
 });
 
 module.exports = router;
