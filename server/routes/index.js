@@ -1,42 +1,33 @@
 var express = require('express');
 var router = express.Router();
 
+
+let indexController = require("../controllers/index");
+let contactsController = require("../controllers/contacts");
+
 // GET home page. 
-// GET index page 
-router.get("/", function (req, res, next) {
-  res.locals = { req: req };
-  res.render("home", { title: "Kugavathanan" });
-});
+router.get("/", indexController.displayHomePage);
 
 //GET about-me page 
-router.get('/about-me', function (req, res, next) {
-  res.locals = { req: req };
-  res.render('about_me', { title: "Kugavathanan | About Me" });
-});
+router.get('/about-me',indexController.displayAboutMePage );
 
 //GET projects page
-router.get('/projects', function (req, res, next) {
-  res.locals = { req: req };
-  res.render('projects', { title: "Kugavathanan | Projects" });
-});
+router.get('/projects', indexController.displayProjectsPage );
 
 //GET services page 
-router.get('/services', function (req, res, next) {
-  res.locals = { req: req };
-  res.render('services', { title: "Kugavathanan | Services" });
-});
+router.get('/services', indexController.displayServicesPage);
 
 //GET contact-me page
-router.get('/contact', function (req, res, next) {
-  res.locals = { req: req };
-  res.render('contact', { title: "Kugavathanan | Contact Me", action:"add" });
-});
+router.get('/contact', indexController.displayContactsPage);
 
 //Get Error"Message
-/*router.get("*", function (req, res, next) {
-  res.render("error", { title: "Error", message: "404" });
-});
-*/
+router.get('/error', indexController.displayErrorPage);
+
+// router.get("", function (req, res, next) {
+//   res.render("error", { title: "Error", message: "404" });
+// });
+
+router.get('/contacts', contactsController.displayContactsPage);
 
 
 module.exports = router;
