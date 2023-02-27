@@ -1,43 +1,51 @@
  <!--Contact Form-->
  <div >
+  <%if (action == "add" ) {%>
     <form action="/contacts/add" method="POST" class="d-flex justify-content-center mt-5" >
+  <%} else {%>
+    <form action="/contacts/edit/<%=Contact._id%>" method="POST" class="d-flex justify-content-center mt-5" >
+  <%} %>  
       <div class="card contact-card">
         <div class="card-body">
           <div class="mb-4">
             <label for="firstName" class="form-label">First Name</label>
             <%if (action == "add" ) {%>
-            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" required>
             <%} else {%>
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"  value="<%=Contact.firstName%>" required>
             <%}%>  
           </div>
           <div class="mb-4">
             <label for="lastName" class="form-label">Last Name</label>
             <%if (action == "add" ) {%>
-            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" required>
             <%} else {%>
+              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name" value="<%=Contact.lastName%>" required>
             <%}%> 
 
           </div>
           <div class="mb-4">
             <label for="contactNumber" class="form-label">Contact Number</label>
             <%if (action == "add" ) {%>
-            <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="(000)-000-0000">
+            <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="(000)-000-0000" required>
             <%} else {%>
+              <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="(000)-000-0000" value="<%=Contact.contactNumber%>" required>
               <%}%>   
           </div>
           <div class="mb-4">
             <label for="email" class="form-label">Email address</label>
             <%if (action == "add" ) {%>
-            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
             <%} else {%>
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="<%=Contact.email%>" required>
             <%}%> 
           </div>
           <div class="mb-4">
             <label for="message" class="form-label">Message</label>      
-            <textarea class="form-control" id="message" name="message" rows="3"><%if(action == "add" ){%><%}else{%><%}%></textarea>
+            <textarea class="form-control" id="message" name="message" rows="3" required><%if(action == "add" ){%><%}else{%><%=Contact.message%><%}%></textarea>
           </div>
           <div class="text-center mx-auto">
-            <button class="btn fw-bold rounded-5"  type="submit"><%if(action == "add" ){%>Submit<%}else{%>Edit<%}%>
+            <button class="btn fw-bold rounded-5"  type="submit"><%if(action == "add" ){%>Submit<%}else{%>Update<%}%>
             </button>
           </div>
         </div>
