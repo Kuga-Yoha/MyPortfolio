@@ -6,6 +6,9 @@ let logger = require('morgan');
 const livereload = require("livereload");
 const connectLivereload = require("connect-livereload");
 require("dotenv").config();
+//Database Setup
+let mongoose = require('mongoose');
+let DB = require('./db');
 
 //Enable live reload
 const liveReloadServer = livereload.createServer();
@@ -15,6 +18,16 @@ liveReloadServer.server.once("connection", () => {
   setTimeout(() => {
     liveReloadServer.refresh("/");
   }, 5);
+});
+
+//Point mongoose to DB URI
+mongoose.connect(DB.URI, {useNewUrlParser:true,useUnifiedtopology:true });
+let mongoDB = mongoose.connection;
+
+//Event Listener for Mongo DB
+mongoDB.on('error', console.error.bind(console,'Connection Error:'));
+mongoDB.once('open',()=>{
+  console.log("connected to MongoDB");
 });
 
 
