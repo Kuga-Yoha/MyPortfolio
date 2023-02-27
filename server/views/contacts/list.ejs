@@ -20,7 +20,7 @@
           <tr class="d-flex">
               <th class="text-center col-4">Contact Name</th>
               <th class="text-center col-2">Contact Number</th>
-              <th class="text-center col-6">Email</th>
+              <th class="text-center col-5">Email</th>
               <th class="text-center col-2"></th>
               <th class="text-center col-2"></th>
           </tr>
@@ -28,9 +28,9 @@
             <tr class="d-flex">
               <td class="text-center col-4"><%=ContactList[count].firstName%> <%=ContactList[count].lastName%></td>
               <td class="text-center col-2"><%=ContactList[count].contactNumber %></td>
-              <td class="text-center col-6"><%=ContactList[count].email %></td>
-              <td class="text-center col-2"><a href="/contactList/edit/<%=ContactList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
-              <td class="col-2"><a href="/contactList/delete/<%=ContactList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>
+              <td class="text-center col-5"><%=ContactList[count].email %></td>
+              <td class="text-center col-2"><a href="/contacts/edit/<%=ContactList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+              <td class="col-2"><a href="/contacts/delete/<%=ContactList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>
             </tr>  
             <%}%>
       </table>
