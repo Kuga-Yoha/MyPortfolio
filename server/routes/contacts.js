@@ -20,16 +20,12 @@ let newContact = Contact({
 
 
 Contact.create(newContact, (err)=>{
-    if(err){
-        
+    if(err){      
         res.end(err);
     }else{
         res.redirect('/contacts/contactList');
     }
 });
-
-
-
 
 });
 
@@ -37,25 +33,60 @@ Contact.create(newContact, (err)=>{
 //GET Router to display the edit contact Page
 router.get("/edit/:id", (req,res,next)=>{
     res.locals = { req: req };
-    res.render('contacts/edit',{title:"Kugavathanan | Add Contact", action:"edit"});
+    let id = req.params.id;
+    Contact.findById(id,(err, contact)=>{
+        if(err){
+             console.error(err);
+             res.end(err);
+        }else{
+            res.render('contacts/edit',{title:"Kugavathanan | Edit Contact", Contact:contact, action:"edit"});
+        }
+    });
+
 });
+
+//POST Router to process the edit page changes
+router.post("/edit/:id", (req,res,next)=>{
+    res.locals = { req: req };
+    
+    let contact = Contact({
+        "_id":req.params.id,
+        "firstName":req.body.firstName,
+        "lastName": req.body.lastName ,
+        "contactNumber": req.body.contactNumber,
+        "email": req.body.email,
+        "message": req.body.message,
+        //"created": Date(),
+        "lastUpdated": Date()
+    }) 
+    
+    Contact.updateOne(contact,(err, contact)=>{
+        if(err){
+             console.error(err);
+             res.end(err);
+        }else{
+            res.redirect("/contacts/edit/"+req.params.id);
+        }
+    });
+
+});
+
+
 
 //(req,res,next)=>{}
 
 //GET Router to display the contact list Page
 router.get("/contactList", (req,res,next)=>{
     res.locals = { req: req };
-console.log("=======>");
+
     Contact.find((err, contactList)=>{
 
         if(err){
-            return console.error(error);
+            return console.error(err);
         }else{
             res.render('contacts/list',{title:'contacts', ContactList:contactList});
         }
     });
-    
-
     
 });
 
