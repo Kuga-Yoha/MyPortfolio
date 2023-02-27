@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head.ejs %>
+  <link rel='stylesheet' href='/content/stylesheets/contact.css' />
+</head>
+
+<body>
+  <header>
+    <% include ../partials/nav.ejs %>
+  </header>
+
+  <main class="container cont-height">
+    <h1 class="content-heading mb-5">List</h1>
+    <div class="row">
+      <div class="column-md-offset-3 col-md-10">
+          <table class="table table-bordered table-stripped table-hover">
+          <!-- Header Row-->
+          <tr class="d-flex">
+              <th class="text-center col-4">Contact Name</th>
+              <th class="text-center col-2">Contact Number</th>
+              <th class="text-center col-6">Email</th>
+              <th class="text-center col-2"></th>
+              <th class="text-center col-2"></th>
+          </tr>
+          <% for(let count =0; count<ContactList.length ;count++) {%>
+            <tr class="d-flex">
+              <td class="text-center col-4"><%=ContactList[count].firstName%> <%=ContactList[count].lastName%></td>
+              <td class="text-center col-2"><%=ContactList[count].contactNumber %></td>
+              <td class="text-center col-6"><%=ContactList[count].email %></td>
+              <td class="text-center col-2"><a href="/contactList/edit/<%=ContactList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
+              <td class="col-2"><a href="/contactList/delete/<%=ContactList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>
+            </tr>  
+            <%}%>
+      </table>
+    
+    </main>
+  
+    <footer>
+      <% include ../partials/footer.ejs %>
+    </footer>
+  </body>
