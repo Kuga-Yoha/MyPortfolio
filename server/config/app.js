@@ -36,6 +36,7 @@ let usersRouter = require('../routes/users');
 let contactsRouter = require('../routes/contacts');
 
 
+let indexController = require('../controllers/index');
 let app = express();
 app.use(connectLivereload());
 
@@ -54,6 +55,7 @@ app.use(express.static(path.join(__dirname, "../../node_modules")));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contacts', contactsRouter);
+app.use('/*', express.Router().get('/*', indexController.displayErrorPage));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
