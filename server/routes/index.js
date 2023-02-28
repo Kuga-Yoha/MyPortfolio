@@ -39,7 +39,7 @@ router.post('/login', indexController.processLoginPage);
 //GET to perform user Logout
 router.get('/logout', indexController.performLogout);
 
-/*
+/* 
 //GET Register for 
 router.get('/register', indexController.displayRegisterPage);
 
