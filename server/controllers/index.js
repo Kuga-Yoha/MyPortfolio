@@ -91,12 +91,6 @@ module.exports.performLogout = (req,res,next)=>{
     
   };
 
-
-
-
-  }
-  
-*/
   
   
   
