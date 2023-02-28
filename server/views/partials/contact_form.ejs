@@ -48,8 +48,8 @@
             <button class="btn fw-bold rounded-5"  type="submit"><%if(action == "add" ){%>Submit<%}else{%>Update<%}%>
             </button>
             <%if (action == "edit" ) {%> 
-                <a class="btn btn-warning fw-bold rounded-5"   href="/">Cancel</a>
-                <a class="btn btn-danger fw-bold rounded-5"   href="/contacts/delete/<%=Contact._id%>">Delete</a>
+                <a class="btn btn-cancel fw-bold rounded-5"   href="/contacts/contactList">Cancel</a>
+                <a class="btn btn-delete fw-bold rounded-5"   href="/contacts/delete/<%=Contact._id%>">Delete</a>
               <%}%>
           </div>
         </div>
