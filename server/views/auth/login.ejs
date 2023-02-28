@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head.ejs %>
+  <link rel='stylesheet' href='../../../public/content/stylesheets/contact.css' />
+ 
+</head>
+
+<body>
+  <header>
+    <% include ../partials/nav.ejs %>
+  </header>
+
+  <main class="container cont-height">
+    <h1 class="content-heading mb-5">Login</h1>
+    <!--Message area-->
+    <%if(messages.length>0){%>
+        <div class="alert alert-danger">
+            <%=messages%>
+        </div>
+    <%}%>   
+    <div class="card contact-card ">
+        <div class="card-body ">
+    <div class="row">
+        <div class="off-set md-4 col-md-4">
+            <h1>Please Log in</h1>
+            <form action="/login"  method="POST" autocomplete="off">
+                <fieldset class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" 
+                    placeholder="Enter the username"
+                    class="form-control" required autofocus>               
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" 
+                    placeholder="Enter the password"
+                    class="form-control" required>               
+                    <a href="/register" class="">Register Here</a>
+                </fieldset>
+
+                <div class="text-center mx-auto">
+                    <button class="btn btn-success fw-bold rounded-4"  type="submit">Login
+                    </button>
+                    <a href="/" class=""><input type="button" class="btn btn-tertiary fw-bold rounded-4" value="cancel"></a>
+                  </div>
+                
+            </form>
+        </div>
+    </div> 
+    </div>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer.ejs %>
+  </footer>
+</body>
+
+<!-- <script>
+  function onSubmitClicked() {
+    window.location = "/"
+  }
+</script> -->
+
+</html>
