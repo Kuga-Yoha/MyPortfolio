@@ -10,7 +10,7 @@ let Contact = require("../models/contact.js");
 module.exports.displayContactsPage =  (req,res,next)=>{
     res.locals = { req: req };
 
-    Contact.find((err, contactList)=>{
+    Contact.find({},null,{sort:{firstName:1}},(err, contactList)=>{
 
         if(err){
             return console.error(err);
