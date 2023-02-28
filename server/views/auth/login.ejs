@@ -3,7 +3,7 @@
 
 <head>
   <% include ../partials/head.ejs %>
-  <link rel='stylesheet' href='../../../public/content/stylesheets/contact.css' />
+  <link rel='stylesheet' href='../content/stylesheets/login.css' />
  
 </head>
 
@@ -21,10 +21,8 @@
         </div>
     <%}%>   
     <div class="card contact-card ">
-        <div class="card-body ">
-    <div class="row">
-        <div class="off-set md-4 col-md-4">
-            <h1>Please Log in</h1>
+        <div class="card-body">
+            <h1></h1>
             <form action="/login"  method="POST" autocomplete="off">
                 <fieldset class="form-group">
                     <label for="username">Username</label>
@@ -38,11 +36,11 @@
                     placeholder="Enter the password"
                     class="form-control" required>               
                 </fieldset>
-
+                <br/>
                 <div class="text-center mx-auto">
-                    <button class="btn btn-success fw-bold rounded-4"  type="submit">Login
+                    <button class="btn  fw-bold rounded-5"  type="submit">Login
                     </button>
-                    <a href="/" class=""><input type="button" class="btn btn-tertiary fw-bold rounded-4" value="cancel"></a>
+                    <a href="/" class=""><input type="button" class="btn btn-cancel fw-bold rounded-5" class="btn  fw-bold rounded-4" value="cancel"></a>
                   </div>
                 
             </form>
