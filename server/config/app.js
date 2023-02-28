@@ -6,6 +6,9 @@ let logger = require('morgan');
 const livereload = require("livereload");
 const connectLivereload = require("connect-livereload");
 require("dotenv").config();
+//Database Setup
+let mongoose = require('mongoose');
+let DB = require('./db');
 
 //Enable live reload
 const liveReloadServer = livereload.createServer();
@@ -17,12 +20,23 @@ liveReloadServer.server.once("connection", () => {
   }, 5);
 });
 
+//Point mongoose to DB URI
+mongoose.connect(DB.URI, {useNewUrlParser:true,useUnifiedtopology:true });
+let mongoDB = mongoose.connection;
+
+//Event Listener for Mongo DB
+mongoDB.on('error', console.error.bind(console,'Connection Error:'));
+mongoDB.once('open',()=>{
+  console.log("connected to MongoDB");
+});
+
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let contactsRouter = require('../routes/contacts');
 
 
+let indexController = require('../controllers/index');
 let app = express();
 app.use(connectLivereload());
 
@@ -41,6 +55,7 @@ app.use(express.static(path.join(__dirname, "../../node_modules")));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contacts', contactsRouter);
+app.use('/*', express.Router().get('/*', indexController.displayErrorPage));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
