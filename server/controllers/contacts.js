@@ -41,7 +41,7 @@ module.exports.addContactPage = (req,res,next)=>{
             //res.end(err); 
             res.redirect('/error');
         }else{
-            res.redirect('/contacts/contactList');
+            res.redirect('/');
         }
     });
 
