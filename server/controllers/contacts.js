@@ -10,12 +10,12 @@ let Contact = require("../models/contact.js");
 module.exports.displayContactsPage =  (req,res,next)=>{
     res.locals = { req: req };
 
-    Contact.find((err, contactList)=>{
+    Contact.find({},null,{sort:{firstName:1}},(err, contactList)=>{
 
         if(err){
             return console.error(err);
         }else{
-            res.render('contacts/list',{title:'contacts', ContactList:contactList});
+            res.render('contacts/list',{title:'contacts',displayName:req.user? req.user.displayName:'', ContactList:contactList});
         }
     });
     
@@ -31,15 +31,16 @@ module.exports.addContactPage = (req,res,next)=>{
     "contactNumber": req.body.contactNumber,
     "email": req.body.email,
     "message": req.body.message,
-    "created": Date(),
-    "lastUpdated": Date()
+    "created": Date.now(),
+    "lastUpdated": Date.now()
     }) 
 
 
     Contact.create(newContact, (err)=>{
         if(err){      
-            //res.end(err); 
-            res.redirect('/error');
+            res.end(err); 
+        
+            // res.redirect('/error');
         }else{
             res.redirect('/');
         }
@@ -57,7 +58,7 @@ module.exports.displayEditContactPage = (req,res,next)=>{
              //res.end(err); 
              res.redirect('/error');
         }else{
-            res.render('contacts/edit',{title:"Kugavathanan | Edit Contact", Contact:contact, action:"edit"});
+            res.render('contacts/edit',{title:"Kugavathanan | Edit Contact",displayName:req.user? req.user.displayName:'', Contact:contact, action:"edit"});
         }
     });
 
@@ -67,8 +68,7 @@ module.exports.displayEditContactPage = (req,res,next)=>{
 module.exports.processEditContactPage = (req,res,next)=>{
     res.locals = { req: req };
     
-    let contact = Contact({
-        "_id":req.params.id,
+    let contact ={
         "firstName":req.body.firstName,
         "lastName": req.body.lastName ,
         "contactNumber": req.body.contactNumber,
@@ -76,18 +76,32 @@ module.exports.processEditContactPage = (req,res,next)=>{
         "message": req.body.message,
         //"created": Date(),
         "lastUpdated": Date()
-    }) 
+    } 
     
-    Contact.updateOne(contact,(err, contact)=>{
+    Contact.updateOne({_id:req.params.id},{$set:contact},(err, contact)=>{
         if(err){
              console.error(err);
-             res.end(err); res.redirect('/error');
+             //res.end(err); 
+             res.redirect('/error');
         }else{
             res.redirect("/contacts/edit/"+req.params.id);
         }
     });
 
 };
+
+module.exports.deleteContact = (req,res,next)=>{
+    res.locals = { req: req };
+
+    Contact.deleteOne({_id:req.params.id}, (err)=>{
+        if(err){
+            res.redirect('/error');
+        }else{
+            res.redirect('/contacts/contactList');
+        }
+    });
+}
+
 
 module.exports.otherNonExistentContactPages =(req, res, next) => {
       res.redirect('/error');

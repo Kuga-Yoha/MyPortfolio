@@ -3,7 +3,7 @@
 
 <head>
   <% include ../partials/head.ejs %>
-  <link rel='stylesheet' href='/content/stylesheets/contact.css' />
+  <link rel='stylesheet' href='../content/stylesheets/contact.css' />
 </head>
 
 <body>
@@ -24,17 +24,19 @@
               <th class="text-center col-2"></th>
               <th class="text-center col-2"></th>
           </tr>
+          <!--Data Rows-->
           <% for(let count =0; count<ContactList.length ;count++) {%>
             <tr class="d-flex">
               <td class="text-center col-4"><%=ContactList[count].firstName%> <%=ContactList[count].lastName%></td>
               <td class="text-center col-2"><%=ContactList[count].contactNumber %></td>
               <td class="text-center col-5"><%=ContactList[count].email %></td>
-              <td class="text-center col-2"><a href="/contacts/edit/<%=ContactList[count]._id%>" class="btn btn-primary"><i class="fas fa-pencil-alt"></i>Edit</a></td>
-              <td class="col-2"><a href="/contacts/delete/<%=ContactList[count]._id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>
+              <td class="text-center col-2"><a href="/contacts/edit/<%=ContactList[count]._id%>" class="btn btn-cancel fw-bold rounded-5">Edit</a></td>
+              <td class="col-2"><a href="/contacts/delete/<%=ContactList[count]._id%>" class="btn btn-delete fw-bold rounded-5">Delete</a></td>
             </tr>  
             <%}%>
       </table>
-    
+    </div>
+    </div>
     </main>
   
     <footer>

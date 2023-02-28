@@ -47,9 +47,18 @@
           <div class="text-center mx-auto">
             <button class="btn fw-bold rounded-5"  type="submit"><%if(action == "add" ){%>Submit<%}else{%>Update<%}%>
             </button>
+            <%if (action == "edit" ) {%> 
+                <a class="btn btn-cancel fw-bold rounded-5"   href="/contacts/contactList">Cancel</a>
+                <a class="btn btn-delete fw-bold rounded-5"   href="/contacts/delete/<%=Contact._id%>">Delete</a>
+              <%}%>
           </div>
         </div>
       </div>
     </form>
     
   </div>
+  <script>
+    function submitClicked() {
+      window.location.assign('/');
+    }
+  </script>

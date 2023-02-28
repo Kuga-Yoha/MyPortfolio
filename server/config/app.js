@@ -10,6 +10,14 @@ require("dotenv").config();
 let mongoose = require('mongoose');
 let DB = require('./db');
 
+//modules for authentication
+let session = require('express-session');        
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStratergy = passportLocal.Strategy;
+let flash = require('connect-flash');
+
+
 //Enable live reload
 const liveReloadServer = livereload.createServer();
 liveReloadServer.watch(path.join(__dirname, "views"));
@@ -52,10 +60,35 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
 
+
+//setup express session
+app.use(session({
+  secret:"someSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+
+//initialize flash - to maintain error message
+app.use(flash());
+
+//intialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+//passport configuration
+
+//create a user model instance
+let userModel = require('../models/user');
+let User = userModel.User;
+passport.use(User.createStrategy());
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contacts', contactsRouter);
-app.use('/*', express.Router().get('/*', indexController.displayErrorPage));
+//app.use('/*', express.Router().get('/*', indexController.displayErrorPage));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

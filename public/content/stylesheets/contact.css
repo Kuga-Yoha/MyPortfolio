@@ -6,10 +6,14 @@ Kugavathanan Yohanathan
 
 */
 
-button {
+button, .btn-edit {
   width: 150px;
   border: 2px solid var(--primary-color) !important;
   color: var(--primary-color) !important;
+  font-family: var(--font-mono) !important;
+}
+
+a{
   font-family: var(--font-mono) !important;
 }
 
@@ -31,6 +35,33 @@ button:hover {
 
 .card {
   width: 50%;
+}
+
+
+.btn-cancel{
+  width: 110px;
+  border: 2px solid var(--bs-gray-800) !important;
+  color: var(--bs-gray-800) !important;
+}
+
+.btn-delete{
+  border: 2px solid var(--bs-danger) !important;
+  color:  var(--bs-danger) !important
+}
+
+.btn-cancel:hover{
+ color:  var(--bs-white) !important;
+ background-color: var(--bs-gray-800) !important;
+ 
+}
+
+.btn-delete:hover{
+  color:  var(--bs-white) !important;
+  background-color: var(--bs-danger) !important;
+}
+
+th, td{
+  font-family: var(--font-sans);
 }
 
 @media only screen and (max-width: 768px) {
