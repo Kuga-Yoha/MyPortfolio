@@ -21,7 +21,7 @@ function requireAuth(req,res,next){
 
 
 //GET Router for default
-router.get('/', (req,res,next)=>{    
+router.get('/',requireAuth, (req,res,next)=>{    
     res.redirect('/contacts/contactList');
 });
 

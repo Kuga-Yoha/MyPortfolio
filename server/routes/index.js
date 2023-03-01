@@ -5,6 +5,17 @@ var router = express.Router();
 let indexController = require("../controllers/index");
 let contactsController = require("../controllers/contacts");
 
+
+//helper function for guard purposes
+function requireAuth(req,res,next){
+    //check if the user is logged in
+    if(!req.isAuthenticated()){
+        return res.redirect('/login');
+    }
+    next();
+
+}
+
 // GET home page. 
 router.get("/", indexController.displayHomePage);
 
@@ -28,7 +39,7 @@ router.get('/error', indexController.displayErrorPage);
 // });
 
 //GET contacts
-router.get('/contacts', contactsController.displayContactsPage);
+router.get('/contacts',requireAuth, contactsController.displayContactsPage);
 
 //GET login page
 router.get('/login', indexController.displayLoginPage);
@@ -39,7 +50,7 @@ router.post('/login', indexController.processLoginPage);
 //GET to perform user Logout
 router.get('/logout', indexController.performLogout);
 
-/* 
+/*
 //GET Register for 
 router.get('/register', indexController.displayRegisterPage);
 
