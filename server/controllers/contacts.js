@@ -104,5 +104,5 @@ module.exports.deleteContact = (req,res,next)=>{
 
 
 module.exports.otherNonExistentContactPages =(req, res, next) => {
-      res.redirect('/error');
+      res.redirect('/login');
     }
