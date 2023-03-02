@@ -31,7 +31,7 @@ router.get('/contactList',requireAuth,contactController.displayContactsPage );
 
 
 //POST router to  process the add contact page
-router.post('/add',requireAuth,contactController.addContactPage);
+router.post('/add',contactController.addContactPage);
 
 
 //GET Router to display the edit contact Page
