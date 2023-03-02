@@ -17,6 +17,7 @@ let passportLocal = require('passport-local');
 let localStratergy = passportLocal.Strategy;
 let flash = require('connect-flash');
 
+//let script = require("../../public/scripts/app");
 
 //Enable live reload
 const liveReloadServer = livereload.createServer();
@@ -88,7 +89,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contacts', contactsRouter);
-//app.use('/*', express.Router().get('/*', indexController.displayErrorPage));
+app.use('/*', express.Router().get('/*', indexController.displayErrorPage));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
